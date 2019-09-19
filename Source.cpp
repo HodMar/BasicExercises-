@@ -107,6 +107,70 @@ public:
 	//overloadat operatore ++, --, *=, /=
 	//za hrabre: overloadat cout i cin 
 
+	friend std::ostream & operator <<(std::ostream &output, const Vector3 &value) 
+	{
+		output << "[ " << value.x << ", " << value.y << ", " << value.z << "]";
+		return output;
+	}
+
+
+	friend std::istream & operator >>(std::istream &input, Vector3 &value)
+	{
+
+		bool error = false;
+		while (!error)
+		{
+			std::cout << "Enter value X: ";
+			if (!(input >> value.x))
+			{
+				error = false;
+			}
+			else
+			{
+				error = true;
+			}	
+			std::cout << std::endl;		
+			input.clear();
+			input.ignore(10000, '\n');		
+		}
+		
+
+		bool error2 = false;
+		while (!error2)
+		{
+			std::cout << "Enter value Y: ";
+			if (!(input >> value.y))
+			{
+				error2 = false;
+			}
+			else
+			{
+				error2 = true;
+			}
+			std::cout << std::endl;
+			input.clear();
+			input.ignore(10000, '\n');
+		}
+
+		bool error3 = false;
+		while (!error3)
+		{
+			std::cout << "Enter value Z: ";
+			if (!(input >> value.z))
+			{
+				error3 = false;
+			}
+			else
+			{
+				error3 = true;
+			}
+			std::cout << std::endl;
+			input.clear();
+			input.ignore(10000, '\n');
+		}
+		
+		return input;
+	}
 private: 
 	float floatingMember;
 };
@@ -202,9 +266,12 @@ int main()
 	{
 		std::cout << "Vrijednost oba vektora je jednaka! " << std::endl;		
 	}
-	else std::cout << "Ova dva vektora su razlièita" << std::endl;
+	else std::cout << "Ova dva vektora su razlicita" << std::endl;
 	
-	
+
+	std::cin >> sum;
+	std::cout << sum << std::endl; 
+
 
 	system("pause");
 
