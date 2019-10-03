@@ -115,11 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="Animals.cpp" />
+    <ClCompile Include="Creature.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mushroom.cpp" />
+    <ClCompile Include="Plants.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="Animals.h" />
+    <ClInclude Include="Header.h" />
+    <ClInclude Include="LivingType.h" />
+    <ClInclude Include="LiveWorld.h" />
+    <ClInclude Include="Mushroom.h" />
+    <ClInclude Include="Plants.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
